@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    <div class="container"></div>
+    <h1 class="row">To Do List</h1>
+    <div class="row">
+        <form action="">
+            <div class="input-group">
+                <input type="text" id="box" placeholder="to do list" style="width: 30vw;">
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="button" value="Add" width="10vw" onclick="additem()">
+            </div>
+        </form>
+    </div>
+    <div>
+        <ul id="list-item">
+
+        </ul>
+    </div>
+
+    <script>
+        function additem () {
+            let item = document.getElementById("box");
+            let listItem = document.getElementById("list-item")
+            if(item.value != ""){
+                let makeli= document.createElement('li');
+                makeli.appendChild(document.createTextNode(item.value))
+                listItem.appendChild(makeli)
+                makeli.onclick = function(){
+                    this.parentNode.removeChild(this);
+                }
+                      } 
+             else {
+                   alert("please enter a value to item")
+                };
+        }
+    </script>
+    
+</body>
+</html>
